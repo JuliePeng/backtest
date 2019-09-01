@@ -1,8 +1,10 @@
-import flask
-
-def get_version():
-    return flask.__version__
+from flask import Flask
+app = Flask(__name__)
 
 
-if __name__ =='__main__':
-    print(get_version())
+@app.route('/')
+def hello():
+    return "Hello World!"
+
+if __name__ == '__main__':
+    app.run()
